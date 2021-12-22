@@ -1,5 +1,6 @@
 export interface Employees {
-  projectId: number;
+  id: number;
+  // projectId: number;
   fullName: string;
   position: string;
   city: string;

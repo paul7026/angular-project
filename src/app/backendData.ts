@@ -1,4 +1,7 @@
-export const projects = [
+import { Projects } from './models/projects';
+import { Employees } from './models/employees';
+
+export const projects: Projects[] = [
   {
     id: 1,
     name: 'SpaceX',
@@ -11,44 +14,44 @@ export const projects = [
   },
 ];
 
-export const employees = [
+export const employees: Employees[] = [
   {
-    projectId: 1,
+    id: 1,
     fullName: 'John Smith',
     position: 'Front-End Developer',
     city: 'New York',
     numberOfProjects: 2,
   },
   {
-    projectId: 1,
+    id: 2,
     fullName: 'Sam Jackson',
     position: 'Back-End Developer',
     city: 'Washington',
     numberOfProjects: 1,
   },
   {
-    projectId: 1,
+    id: 3,
     fullName: 'William Jonson',
     position: 'QA-engineer',
     city: 'New York',
     numberOfProjects: 3,
   },
   {
-    projectId: 1,
+    id: 4,
     fullName: 'Michael Garcia',
     position: 'DevOps-engineer',
     city: 'Phoenix',
     numberOfProjects: 2,
   },
   {
-    projectId: 2,
+    id: 5,
     fullName: 'Andre Miller',
     position: 'Front-End Developer',
     city: 'Boston',
     numberOfProjects: 3,
   },
   {
-    projectId: 2,
+    id: 6,
     fullName: 'Maximilian Lopez',
     position: 'Back-End Developer',
     city: 'Los Angeles',

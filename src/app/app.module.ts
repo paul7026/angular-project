@@ -12,7 +12,6 @@ import { AgGridModule } from 'ag-grid-angular';
 import { ProjectCellCustomComponent } from './components/project-cell-custom/project-cell-custom.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
-import { EmployeesComponent } from './components/employees/employees.component';
 import { EmployeesCellCustomComponent } from './components/employees-cell-custom/employees-cell-custom.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
@@ -26,7 +25,6 @@ import { EmployeeCardComponent } from './components/employee-card/employee-card.
     ProjectCellCustomComponent,
     PageNotFoundComponent,
     EmployeesTableComponent,
-    EmployeesComponent,
     EmployeesCellCustomComponent,
     ProjectCardComponent,
     EmployeeCardComponent,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { projects } from '../../backendData';
+import { Employees } from '../../models/employees';
+import { employees, projects } from '../../backendData';
 import { Projects } from '../../models/projects';
 
 @Component({
@@ -9,6 +10,7 @@ import { Projects } from '../../models/projects';
 })
 export class EmployeeCardComponent implements OnInit {
   projectsData: Projects[] = projects;
+  employee: Employees = employees[0];
   constructor() {}
 
   ngOnInit(): void {}
