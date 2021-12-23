@@ -3,6 +3,7 @@ import { Employee } from '../../models/employee';
 import { employees, projects } from '../../backendData';
 import { Project } from '../../models/project';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-page',
@@ -15,7 +16,7 @@ export class EmployeePageComponent implements OnInit {
   employee: Employee | undefined;
   projectsFiltered: Project[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -29,5 +30,8 @@ export class EmployeePageComponent implements OnInit {
         this.projectsFiltered.push(project);
       }
     });
+  }
+  goToMain() {
+    this.router.navigateByUrl('');
   }
 }

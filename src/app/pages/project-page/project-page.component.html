@@ -1,7 +1,10 @@
 <app-shell>
-  <div *ngIf="project">
-    <h2 class="project__title">{{ project.name }}</h2>
-    <p class="project__subtitle">Описание: {{ project.description }}</p>
+  <div class="project__main">
+    <div *ngIf="project">
+      <h2 class="project__title">{{ project.name }}</h2>
+      <p class="project__subtitle">Описание: {{ project.description }}</p>
+    </div>
+    <app-employees-table [employees]="employeesFiltered"></app-employees-table>
+    <button (click)="goToMain()" mat-raised-button color="primary">Back</button>
   </div>
-  <app-employees-table [employees]="employeesFiltered"></app-employees-table>
 </app-shell>

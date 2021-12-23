@@ -15,6 +15,7 @@ import { EmployeesCellCustomComponent } from './components/employees-cell-custom
 
 import { ProjectPageComponent } from './pages/project-page/project-page.component';
 import { EmployeePageComponent } from './pages/employee-page/employee-page.component';
+import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EmployeePageComponent } from './pages/employee-page/employee-page.compo
     EmployeesCellCustomComponent,
     ProjectPageComponent,
     EmployeePageComponent,
+    EmployeeCardComponent,
   ],
   imports: [
     BrowserModule,

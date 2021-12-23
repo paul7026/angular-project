@@ -1,8 +1,7 @@
 <app-shell>
-  <div class="employee__box" *ngIf="employee">
-    <h2>{{ employee.fullName }}</h2>
-    <p>Position: {{ employee.position }}</p>
-    <p>City: {{ employee.city }}</p>
+  <div class="employee__main">
+    <app-employee-card [employee]="employee"></app-employee-card>
+    <app-projects-table [projects]="projectsFiltered"></app-projects-table>
+    <button (click)="goToMain()" mat-raised-button color="primary">Back</button>
   </div>
-  <app-projects-table [projects]="projectsFiltered"></app-projects-table>
 </app-shell>
