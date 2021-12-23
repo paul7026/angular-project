@@ -6,11 +6,13 @@ export const projects: Projects[] = [
     id: 1,
     name: 'SpaceX',
     numberOfEmploees: 3,
+    description: 'Some description about spaceX',
   },
   {
     id: 2,
     name: 'Gala',
-    numberOfEmploees: 2,
+    numberOfEmploees: 3,
+    description: 'Some description about Gala',
   },
 ];
 
@@ -21,6 +23,7 @@ export const employees: Employees[] = [
     position: 'Front-End Developer',
     city: 'New York',
     numberOfProjects: 2,
+    projectId: 1,
   },
   {
     id: 2,
@@ -28,6 +31,7 @@ export const employees: Employees[] = [
     position: 'Back-End Developer',
     city: 'Washington',
     numberOfProjects: 1,
+    projectId: 1,
   },
   {
     id: 3,
@@ -35,6 +39,7 @@ export const employees: Employees[] = [
     position: 'QA-engineer',
     city: 'New York',
     numberOfProjects: 3,
+    projectId: 1,
   },
   {
     id: 4,
@@ -42,6 +47,7 @@ export const employees: Employees[] = [
     position: 'DevOps-engineer',
     city: 'Phoenix',
     numberOfProjects: 2,
+    projectId: 2,
   },
   {
     id: 5,
@@ -49,6 +55,7 @@ export const employees: Employees[] = [
     position: 'Front-End Developer',
     city: 'Boston',
     numberOfProjects: 3,
+    projectId: 2,
   },
   {
     id: 6,
@@ -56,5 +63,6 @@ export const employees: Employees[] = [
     position: 'Back-End Developer',
     city: 'Los Angeles',
     numberOfProjects: 2,
+    projectId: 2,
   },
 ];

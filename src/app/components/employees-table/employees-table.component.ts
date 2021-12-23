@@ -10,10 +10,9 @@ import { EmployeesCellCustomComponent } from '../employees-cell-custom/employees
 })
 export class EmployeesTableComponent {
   @Input() employees: Employees[] = [];
-  employeesFiltered: Employees[] = [];
 
   columnDefs: ColDef[] = [
-    { headerName: 'Project number', field: 'projectId' },
+    { headerName: 'Project id', field: 'projectId' },
     { headerName: 'Full Name', field: 'fullName' },
     { headerName: 'Position', field: 'position' },
     { headerName: 'City', field: 'city' },

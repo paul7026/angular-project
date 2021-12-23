@@ -6,15 +6,15 @@ import { ShellComponent } from './components/shell/shell.component';
 import { ProjectsTableComponent } from './components/projects-table/projects-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-
-import { MainComponent } from './components/main/main.component';
+import { MainComponent } from './pages/main/main.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ProjectCellCustomComponent } from './components/project-cell-custom/project-cell-custom.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { EmployeesCellCustomComponent } from './components/employees-cell-custom/employees-cell-custom.component';
-import { ProjectCardComponent } from './components/project-card/project-card.component';
-import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+
+import { ProjectPageComponent } from './pages/project-page/project-page.component';
+import { EmployeePageComponent } from './pages/employee-page/employee-page.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import { EmployeeCardComponent } from './components/employee-card/employee-card.
     PageNotFoundComponent,
     EmployeesTableComponent,
     EmployeesCellCustomComponent,
-    ProjectCardComponent,
-    EmployeeCardComponent,
+    ProjectPageComponent,
+    EmployeePageComponent,
   ],
   imports: [
     BrowserModule,
