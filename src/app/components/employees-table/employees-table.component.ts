@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Employees } from '../../models/employees';
+import { Employee } from '../../models/employee';
 import { ColDef } from 'ag-grid-community';
 import { EmployeesCellCustomComponent } from '../employees-cell-custom/employees-cell-custom.component';
 
@@ -9,7 +9,7 @@ import { EmployeesCellCustomComponent } from '../employees-cell-custom/employees
   styleUrls: ['./employees-table.component.scss'],
 })
 export class EmployeesTableComponent {
-  @Input() employees: Employees[] = [];
+  @Input() employees: Employee[] = [];
 
   columnDefs: ColDef[] = [
     { headerName: 'Project id', field: 'projectId' },

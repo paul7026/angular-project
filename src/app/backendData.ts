@@ -1,7 +1,7 @@
-import { Projects } from './models/projects';
-import { Employees } from './models/employees';
+import { Project } from './models/project';
+import { Employee } from './models/employee';
 
-export const projects: Projects[] = [
+export const projects: Project[] = [
   {
     id: 1,
     name: 'SpaceX',
@@ -16,7 +16,7 @@ export const projects: Projects[] = [
   },
 ];
 
-export const employees: Employees[] = [
+export const employees: Employee[] = [
   {
     id: 1,
     fullName: 'John Smith',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { projects } from '../../backendData';
-import { Projects } from '../../models/projects';
+import { Project } from '../../models/project';
 
 @Component({
   selector: 'app-main',
@@ -8,5 +8,5 @@ import { Projects } from '../../models/projects';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  projectsData: Projects[] = projects;
+  projectsData: Project[] = projects;
 }

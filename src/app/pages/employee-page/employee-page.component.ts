@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Employees } from '../../models/employees';
+import { Employee } from '../../models/employee';
 import { employees, projects } from '../../backendData';
-import { Projects } from '../../models/projects';
+import { Project } from '../../models/project';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,10 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./employee-page.component.scss'],
 })
 export class EmployeePageComponent implements OnInit {
-  employeesData: Employees[] = employees;
-  projectsData: Projects[] = projects;
-  employee: Employees | undefined;
-  projectsFiltered: any = [];
+  employeesData: Employee[] = employees;
+  projectsData: Project[] = projects;
+  employee: Employee | undefined;
+  projectsFiltered: Project[] = [];
 
   constructor(private route: ActivatedRoute) {}
 
@@ -21,10 +21,10 @@ export class EmployeePageComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const idFromRoute = Number(routeParams.get('id'));
     this.employee = this.employeesData.find(
-      (employee: Employees) => employee.id === idFromRoute
+      (employee: Employee) => employee.id === idFromRoute
     );
 
-    this.projectsData.forEach((project: any) => {
+    this.projectsData.forEach((project: Project) => {
       if (project.id === this.employee?.projectId) {
         this.projectsFiltered.push(project);
       }

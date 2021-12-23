@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ICellRendererParams } from '@ag-grid-community/core';
 
 @Component({
@@ -6,13 +6,10 @@ import { ICellRendererParams } from '@ag-grid-community/core';
   templateUrl: './project-cell-custom.component.html',
   styleUrls: ['./project-cell-custom.component.scss'],
 })
-export class ProjectCellCustomComponent implements OnInit {
+export class ProjectCellCustomComponent {
   rowId: number = 0;
-  constructor() {}
 
   agInit(params: ICellRendererParams): void {
     this.rowId = params.data.id;
   }
-
-  ngOnInit(): void {}
 }

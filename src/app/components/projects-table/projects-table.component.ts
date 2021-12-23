@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ColDef } from 'ag-grid-community';
-import { Projects } from '../../models/projects';
+import { Project } from '../../models/project';
 import { ProjectCellCustomComponent } from '../project-cell-custom/project-cell-custom.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProjectCellCustomComponent } from '../project-cell-custom/project-cell-
   styleUrls: ['./projects-table.component.scss'],
 })
 export class ProjectsTableComponent {
-  @Input() projects: Projects[] = [];
+  @Input() projects: Project[] = [];
   columnDefs: ColDef[] = [
     {
       headerName: 'Project number',
