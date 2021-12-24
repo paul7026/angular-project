@@ -10,26 +10,44 @@ import { ProjectCellCustomComponent } from '../project-cell-custom/project-cell-
 })
 export class ProjectsTableComponent {
   @Input() projects: Project[] = [];
-  columnDefs: ColDef[] = [
-    {
-      headerName: 'Project number',
-      field: 'id',
-    },
-    {
-      headerName: 'Project Name',
-      field: 'name',
-    },
-    {
-      headerName: 'Number of Employees',
-      field: 'numberOfEmploees',
-    },
-    {
-      headerName: '',
-      cellRendererFramework: ProjectCellCustomComponent,
-    },
-  ];
 
-  onGridReady(params: any) {
-    params.api.sizeColumnsToFit();
+  domLayout: any;
+  columnDefs: ColDef[] = [];
+  defaultColDef: any;
+
+  constructor() {
+    this.columnDefs = [
+      {
+        headerName: 'Project number',
+        field: 'id',
+        flex: 1,
+        minWidth: 170,
+      },
+      {
+        headerName: 'Project Name',
+        field: 'name',
+        flex: 1,
+        minWidth: 170,
+      },
+      {
+        headerName: 'Number of Employees',
+        field: 'numberOfEmploees',
+        flex: 1,
+        minWidth: 170,
+      },
+      {
+        headerName: '',
+        cellRendererFramework: ProjectCellCustomComponent,
+        flex: 1,
+        minWidth: 170,
+      },
+    ];
+
+    this.defaultColDef = {
+      sortable: true,
+      filter: true,
+      resizable: true,
+    };
+    this.domLayout = 'autoHeight';
   }
 }

@@ -1,7 +1,19 @@
 <app-shell>
-  <div class="employee__main">
-    <app-employee-card [employee]="employee"></app-employee-card>
-    <app-projects-table [projects]="projectsFiltered"></app-projects-table>
-    <button (click)="goToMain()" mat-raised-button color="primary">Back</button>
+  <div class="employee__wrapper">
+    <app-employee-card
+      [employee]="employee"
+      class="employee__subtitle"
+    ></app-employee-card>
+    <div class="table__wrapper">
+      <app-projects-table [projects]="projectsFiltered"></app-projects-table>
+    </div>
   </div>
+  <button
+    (click)="goToMain()"
+    mat-raised-button
+    color="primary"
+    class="employee__button"
+  >
+    Back
+  </button>
 </app-shell>

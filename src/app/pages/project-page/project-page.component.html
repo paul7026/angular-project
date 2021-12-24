@@ -1,10 +1,21 @@
 <app-shell>
-  <div class="project__main">
-    <div *ngIf="project">
-      <h2 class="project__title">{{ project.name }}</h2>
-      <p class="project__subtitle">Описание: {{ project.description }}</p>
+  <div class="project__wrapper">
+    <app-project-card
+      class="project__card-component"
+      [project]="project"
+    ></app-project-card>
+    <div class="table__wrapper">
+      <app-employees-table
+        [employees]="employeesFiltered"
+      ></app-employees-table>
     </div>
-    <app-employees-table [employees]="employeesFiltered"></app-employees-table>
-    <button (click)="goToMain()" mat-raised-button color="primary">Back</button>
   </div>
+  <button
+    (click)="goToMain()"
+    mat-raised-button
+    color="primary"
+    class="project__button"
+  >
+    Back
+  </button>
 </app-shell>

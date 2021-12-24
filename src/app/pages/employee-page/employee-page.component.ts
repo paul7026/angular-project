@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-page.component.scss'],
 })
 export class EmployeePageComponent implements OnInit {
-  employeesData: Employee[] = employees;
-  projectsData: Project[] = projects;
   employee: Employee | undefined;
   projectsFiltered: Project[] = [];
 
@@ -21,17 +19,17 @@ export class EmployeePageComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const idFromRoute = Number(routeParams.get('id'));
-    this.employee = this.employeesData.find(
-      (employee: Employee) => employee.id === idFromRoute
+
+    this.employee = employees.find(
+      (employee: Employee) => employee.userId === idFromRoute
     );
 
-    this.projectsData.forEach((project: Project) => {
-      if (project.id === this.employee?.projectId) {
-        this.projectsFiltered.push(project);
-      }
-    });
+    this.projectsFiltered = projects.filter(
+      (project: Project) => project.id === this.employee?.projectId
+    );
   }
+
   goToMain() {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/');
   }
 }

@@ -1,8 +1,8 @@
 <ag-grid-angular
-  style="width: 50%; height: 500px"
   class="ag-theme-alpine"
   [rowData]="projects"
   [columnDefs]="columnDefs"
-  (gridReady)="onGridReady($event)"
+  [defaultColDef]="defaultColDef"
+  [domLayout]="domLayout"
 >
 </ag-grid-angular>

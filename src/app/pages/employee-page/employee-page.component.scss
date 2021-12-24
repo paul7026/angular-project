@@ -1,3 +1,22 @@
-.employee__main {
-  padding: 50px 50px;
+.employee__wrapper {
+  display: flex;
+  width: 100%;
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+.table__wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 5%;
+}
+
+.employee__button {
+  width: 100px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+}
+
+.employee__subtitle {
+  max-width: 300px;
 }

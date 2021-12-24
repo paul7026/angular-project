@@ -15,8 +15,4 @@ export class ProjectCellCustomComponent {
   agInit(params: ICellRendererParams): void {
     this.rowId = params.data.id;
   }
-
-  changePage() {
-    this.router.navigateByUrl(`/projects/${this.rowId}`);
-  }
 }
