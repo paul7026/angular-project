@@ -17,6 +17,8 @@ import { ProjectPageComponent } from './pages/project-page/project-page.componen
 import { EmployeePageComponent } from './pages/employee-page/employee-page.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { ProjectsService } from './services/projects.service';
+import { EmployeesService } from './services/employees.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
     MatButtonModule,
     AgGridModule.withComponents([]),
   ],
-  providers: [],
+  providers: [ProjectsService, EmployeesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

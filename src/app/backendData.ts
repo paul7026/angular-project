@@ -1,7 +1,7 @@
 import { Project } from './models/project';
 import { Employee } from './models/employee';
 
-export const projects: Project[] = [
+export const PROJECTS: Project[] = [
   {
     id: 1,
     name: 'SpaceX',
@@ -26,69 +26,9 @@ export const projects: Project[] = [
     numberOfEmploees: 3,
     description: 'Some description about Gala',
   },
-  // {
-  //   id: 1,
-  //   name: 'SpaceX',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about spaceX',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'Gala',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about Gala',
-  // },
-  // {
-  //   id: 1,
-  //   name: 'SpaceX',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about spaceX',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'Gala',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about Gala',
-  // },
-  // {
-  //   id: 1,
-  //   name: 'SpaceX',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about spaceX',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'Gala',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about Gala',
-  // },
-  // {
-  //   id: 1,
-  //   name: 'SpaceX',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about spaceX',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'Gala',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about Gala',
-  // },
-  // {
-  //   id: 1,
-  //   name: 'SpaceX',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about spaceX',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'Gala',
-  //   numberOfEmploees: 3,
-  //   description: 'Some description about Gala',
-  // },
 ];
 
-export const employees: Employee[] = [
+export const EMPLOYEES: Employee[] = [
   {
     userId: 1,
     fullName: 'John Smith',

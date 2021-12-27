@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { projects } from '../../backendData';
+import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from '../../services/projects.service';
 import { Project } from '../../models/project';
 
 @Component({
@@ -7,6 +7,17 @@ import { Project } from '../../models/project';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent {
-  projectsData: Project[] = projects;
+export class MainComponent implements OnInit {
+  projectsData: Project[] = [];
+  constructor(private projectsService: ProjectsService) {}
+
+  ngOnInit() {
+    this.getProjects();
+  }
+
+  getProjects(): void {
+    this.projectsService
+      .getProjects()
+      .subscribe((projects) => (this.projectsData = projects));
+  }
 }
