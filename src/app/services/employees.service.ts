@@ -12,7 +12,7 @@ export class EmployeesService {
   getEmployeeById(
     id: number
   ): Observable<{ employee: Employee; projects: Project[] }> {
-    const employee = EMPLOYEES.find((employee) => employee.userId === id)!;
+    const employee = EMPLOYEES.find((employee) => employee.id === id)!;
     const projects = PROJECTS.filter(
       (project) => project.id === employee.projectId
     );

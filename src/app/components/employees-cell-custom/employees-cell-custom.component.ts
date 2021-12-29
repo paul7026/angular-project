@@ -13,6 +13,6 @@ export class EmployeesCellCustomComponent {
   constructor(private router: Router) {}
 
   agInit(params: ICellRendererParams): void {
-    this.rowId = params.data.userId;
+    this.rowId = params.data.id;
   }
 }

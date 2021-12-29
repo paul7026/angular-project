@@ -11,43 +11,37 @@ import { ProjectCellCustomComponent } from '../project-cell-custom/project-cell-
 export class ProjectsTableComponent {
   @Input() projects: Project[] = [];
 
-  domLayout: any;
-  columnDefs: ColDef[] = [];
-  defaultColDef: any;
+  columnDefs: ColDef[] = [
+    {
+      headerName: 'Project number',
+      field: 'id',
+      flex: 1,
+      minWidth: 170,
+    },
+    {
+      headerName: 'Project Name',
+      field: 'name',
+      flex: 1,
+      minWidth: 170,
+    },
+    {
+      headerName: 'Number of Employees',
+      field: 'numberOfEmploees',
+      flex: 1,
+      minWidth: 170,
+    },
+    {
+      headerName: '',
+      cellRendererFramework: ProjectCellCustomComponent,
+      flex: 1,
+      minWidth: 170,
+    },
+  ];
 
-  constructor() {
-    this.columnDefs = [
-      {
-        headerName: 'Project number',
-        field: 'id',
-        flex: 1,
-        minWidth: 170,
-      },
-      {
-        headerName: 'Project Name',
-        field: 'name',
-        flex: 1,
-        minWidth: 170,
-      },
-      {
-        headerName: 'Number of Employees',
-        field: 'numberOfEmploees',
-        flex: 1,
-        minWidth: 170,
-      },
-      {
-        headerName: '',
-        cellRendererFramework: ProjectCellCustomComponent,
-        flex: 1,
-        minWidth: 170,
-      },
-    ];
-
-    this.defaultColDef = {
-      sortable: true,
-      filter: true,
-      resizable: true,
-    };
-    this.domLayout = 'autoHeight';
-  }
+  defaultColDef: ColDef = {
+    sortable: true,
+    filter: true,
+    resizable: true,
+  };
+  domLayout: string = 'autoHeight';
 }

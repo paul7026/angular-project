@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
 
 export const EMPLOYEES: Employee[] = [
   {
-    userId: 1,
+    id: 1,
     fullName: 'John Smith',
     position: 'Front-End Developer',
     city: 'New York',
@@ -146,7 +146,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 2,
+    id: 2,
     fullName: 'Sam Jackson',
     position: 'Back-End Developer',
     city: 'Washington',
@@ -154,7 +154,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 3,
+    id: 3,
     fullName: 'William Jonson',
     position: 'QA-engineer',
     city: 'New York',
@@ -163,7 +163,7 @@ export const EMPLOYEES: Employee[] = [
   },
 
   {
-    userId: 1,
+    id: 1,
     fullName: 'John Smith',
     position: 'Front-End Developer',
     city: 'New York',
@@ -171,7 +171,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 2,
+    id: 2,
     fullName: 'Sam Jackson',
     position: 'Back-End Developer',
     city: 'Washington',
@@ -179,7 +179,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 3,
+    id: 3,
     fullName: 'William Jonson',
     position: 'QA-engineer',
     city: 'New York',
@@ -187,7 +187,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 1,
+    id: 1,
     fullName: 'John Smith',
     position: 'Front-End Developer',
     city: 'New York',
@@ -195,7 +195,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 2,
+    id: 2,
     fullName: 'Sam Jackson',
     position: 'Back-End Developer',
     city: 'Washington',
@@ -203,7 +203,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 3,
+    id: 3,
     fullName: 'William Jonson',
     position: 'QA-engineer',
     city: 'New York',
@@ -211,7 +211,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 1,
+    id: 1,
     fullName: 'John Smith',
     position: 'Front-End Developer',
     city: 'New York',
@@ -219,7 +219,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 2,
+    id: 2,
     fullName: 'Sam Jackson',
     position: 'Back-End Developer',
     city: 'Washington',
@@ -227,7 +227,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 3,
+    id: 3,
     fullName: 'William Jonson',
     position: 'QA-engineer',
     city: 'New York',
@@ -235,7 +235,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 1,
+    id: 1,
     fullName: 'John Smith',
     position: 'Front-End Developer',
     city: 'New York',
@@ -243,7 +243,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 2,
+    id: 2,
     fullName: 'Sam Jackson',
     position: 'Back-End Developer',
     city: 'Washington',
@@ -251,7 +251,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 1,
   },
   {
-    userId: 3,
+    id: 3,
     fullName: 'William Jonson',
     position: 'QA-engineer',
     city: 'New York',
@@ -260,7 +260,7 @@ export const EMPLOYEES: Employee[] = [
   },
 
   {
-    userId: 4,
+    id: 4,
     fullName: 'Michael Garcia',
     position: 'DevOps-engineer',
     city: 'Phoenix',
@@ -268,7 +268,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 2,
   },
   {
-    userId: 5,
+    id: 5,
     fullName: 'Andre Miller',
     position: 'Front-End Developer',
     city: 'Boston',
@@ -276,7 +276,7 @@ export const EMPLOYEES: Employee[] = [
     projectId: 2,
   },
   {
-    userId: 6,
+    id: 6,
     fullName: 'Maximilian Lopez',
     position: 'Back-End Developer',
     city: 'Los Angeles',

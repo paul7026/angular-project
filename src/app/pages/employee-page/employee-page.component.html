@@ -1,19 +1,11 @@
 <app-shell *ngIf="!showSpinner">
-  <div class="employee__wrapper">
-    <app-employee-card
-      [employee]="employee"
-      class="employee__subtitle"
-    ></app-employee-card>
-    <div class="table__wrapper">
+  <div class="employee-wrapper">
+    <app-employee-card [employee]="employee"></app-employee-card>
+    <div class="table-wrapper">
       <app-projects-table [projects]="projectsFiltered"></app-projects-table>
     </div>
   </div>
-  <button
-    (click)="goToMain()"
-    mat-raised-button
-    color="primary"
-    class="employee__button"
-  >
+  <button (click)="goToMain()" mat-raised-button color="primary" class="button">
     Back
   </button>
 </app-shell>

@@ -1,23 +1,23 @@
-.project__wrapper {
+.project-wrapper {
   display: flex;
   width: 100%;
   padding: 30px 50px;
   box-sizing: border-box;
 }
 
-.table__wrapper {
+.table-wrapper {
   width: 100%;
   box-sizing: border-box;
   margin-left: 5%;
 }
 
-.project__button {
+button {
   width: 100px;
   margin-bottom: 25px;
   margin-left: 50px;
 }
 
-.project__card-component {
+.project-card-component {
   max-width: 300px;
 }
 
