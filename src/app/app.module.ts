@@ -6,6 +6,7 @@ import { ShellComponent } from './components/shell/shell.component';
 import { ProjectsTableComponent } from './components/projects-table/projects-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MainComponent } from './pages/main/main.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ProjectCellCustomComponent } from './components/project-cell-custom/project-cell-custom.component';
@@ -40,6 +41,7 @@ import { EmployeesService } from './services/employees.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     AgGridModule.withComponents([]),
   ],
   providers: [ProjectsService, EmployeesService],

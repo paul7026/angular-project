@@ -20,3 +20,9 @@
 .employee__subtitle {
   max-width: 300px;
 }
+
+mat-spinner {
+  position: relative;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+}

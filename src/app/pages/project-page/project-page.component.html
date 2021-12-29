@@ -1,4 +1,4 @@
-<app-shell>
+<app-shell *ngIf="!showSpinner">
   <div class="project__wrapper">
     <app-project-card
       class="project__card-component"
@@ -19,3 +19,4 @@
     Back
   </button>
 </app-shell>
+<mat-spinner *ngIf="showSpinner"></mat-spinner>

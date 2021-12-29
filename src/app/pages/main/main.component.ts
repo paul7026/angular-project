@@ -9,10 +9,15 @@ import { Project } from '../../models/project';
 })
 export class MainComponent implements OnInit {
   projectsData: Project[] = [];
+  showSpinner: boolean = false;
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.getProjects();
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.getProjects();
+      this.showSpinner = false;
+    }, 1000);
   }
 
   getProjects(): void {

@@ -1,5 +1,6 @@
-<app-shell>
+<app-shell *ngIf="!showSpinner">
   <div class="table__wrapper">
     <app-projects-table [projects]="projectsData"></app-projects-table>
   </div>
 </app-shell>
+<mat-spinner *ngIf="showSpinner"></mat-spinner>

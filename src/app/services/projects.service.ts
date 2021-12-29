@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../models/project';
 import { PROJECTS } from '../backendData';
+import { EMPLOYEES } from '../backendData';
 import { Observable, of } from 'rxjs';
+import { Employee } from '../models/employee';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,14 @@ export class ProjectsService {
     return projects;
   }
 
-  getProjectByProjectId(id: number) {
-    return PROJECTS.find((project: Project) => project.id === id);
+  getProjectByProjectId(
+    id: number
+  ): Observable<{ project: Project; employees: Employee[] }> {
+    const project = PROJECTS.find((project) => project.id === id)!;
+    const employees = EMPLOYEES.filter(
+      (employee) => employee.projectId === project.id
+    );
+    const data = { project: project, employees: employees };
+    return of(data);
   }
 }

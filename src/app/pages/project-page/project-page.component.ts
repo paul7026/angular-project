@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EMPLOYEES } from '../../backendData';
-import { Project } from '../../models/project';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../services/projects.service';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-project-page',
@@ -13,8 +13,9 @@ import { ProjectsService } from '../../services/projects.service';
 })
 export class ProjectPageComponent implements OnInit {
   employeesData: Employee[] = EMPLOYEES;
-  project: Project | undefined;
+  project: any;
   employeesFiltered: Employee[] = [];
+  showSpinner: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,19 +24,21 @@ export class ProjectPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const projectIdFromRoute = Number(routeParams.get('id'));
-    this.getProjectByProjectId();
-
-    this.employeesFiltered = this.employeesData.filter(
-      (employee: Employee) => employee.projectId === projectIdFromRoute
-    );
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.getProjectByProjectId();
+      this.showSpinner = false;
+    }, 1000);
   }
 
   getProjectByProjectId(): void {
     const routeParams = this.route.snapshot.paramMap;
     const id = Number(routeParams.get('id'));
-    this.project = this.projectsService.getProjectByProjectId(id);
+
+    this.projectsService.getProjectByProjectId(id).subscribe((data) => {
+      this.project = data.project;
+      this.employeesFiltered = data.employees;
+    });
   }
 
   goToMain() {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
-import { PROJECTS } from '../../backendData';
 import { Project } from '../../models/project';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -14,6 +13,7 @@ import { EmployeesService } from '../../services/employees.service';
 export class EmployeePageComponent implements OnInit {
   employee: Employee | undefined;
   projectsFiltered: Project[] = [];
+  showSpinner: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,19 +22,20 @@ export class EmployeePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const idFromRoute = Number(routeParams.get('id'));
-    this.getEmployeeById();
-
-    this.projectsFiltered = PROJECTS.filter(
-      (project: Project) => project.id === this.employee?.projectId
-    );
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.getEmployeeById();
+      this.showSpinner = false;
+    }, 1000);
   }
 
   getEmployeeById(): void {
     const routeParams = this.route.snapshot.paramMap;
     const id = Number(routeParams.get('id'));
-    this.employee = this.employeesService.getEmployeeById(id);
+    this.employeesService.getEmployeeById(id).subscribe((data) => {
+      this.employee = data.employee;
+      this.projectsFiltered = data.projects;
+    });
   }
 
   goToMain(): void {
