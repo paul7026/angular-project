@@ -11,7 +11,7 @@ import { Employee } from '../models/employee';
 export class ProjectsService {
   getProjects(): Observable<Project[]> {
     const projects = of(PROJECTS);
-    return projects;
+    return projects.pipe(delay(1000));
   }
 
   getProjectByProjectId(
@@ -22,6 +22,6 @@ export class ProjectsService {
       (employee) => employee.projectId === +project.id
     );
     const data = { project: project, employees: employees };
-    return of(data);
+    return of(data).pipe(delay(1000));
   }
 }

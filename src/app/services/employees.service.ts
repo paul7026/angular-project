@@ -16,6 +16,6 @@ export class EmployeesService {
     const employee = EMPLOYEES.find((employee) => employee.id === id)!;
     const projects = PROJECTS.filter((project) => project.id === employee.id);
     const data = { employee: employee, projects: projects };
-    return of(data);
+    return of(data).pipe(delay(1000));
   }
 }

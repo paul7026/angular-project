@@ -30,14 +30,11 @@ export class EmployeePageComponent implements OnInit {
   getEmployeeById(): void {
     const routeParams = this.route.snapshot.paramMap;
     const idFromRoute = String(routeParams.get('id'));
-    this.employeesService
-      .getEmployeeById(idFromRoute)
-      .pipe(delay(1000))
-      .subscribe((data) => {
-        this.showSpinner = false;
-        this.employee = data.employee;
-        this.projectsFiltered = data.projects;
-      });
+    this.employeesService.getEmployeeById(idFromRoute).subscribe((data) => {
+      this.showSpinner = false;
+      this.employee = data.employee;
+      this.projectsFiltered = data.projects;
+    });
   }
 
   goToMain(): void {

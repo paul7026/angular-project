@@ -19,12 +19,9 @@ export class MainComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projectsService
-      .getProjects()
-      .pipe(delay(1000))
-      .subscribe((projects) => {
-        this.showSpinner = false;
-        this.projectsData = projects;
-      });
+    this.projectsService.getProjects().subscribe((projects) => {
+      this.showSpinner = false;
+      this.projectsData = projects;
+    });
   }
 }

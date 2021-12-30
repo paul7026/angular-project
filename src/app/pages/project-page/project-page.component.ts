@@ -4,7 +4,8 @@ import { EMPLOYEES } from '../../backendData';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../services/projects.service';
-import { delay } from 'rxjs/operators';
+import { delay, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-project-page',
@@ -32,14 +33,14 @@ export class ProjectPageComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const idFromRoute = String(routeParams.get('id'));
 
-    this.projectsService
-      .getProjectByProjectId(idFromRoute)
-      .pipe(delay(1000))
-      .subscribe((data) => {
+    this.projectsService.getProjectByProjectId(idFromRoute).subscribe(
+      (data) => {
         this.showSpinner = false;
         this.project = data.project;
         this.employeesFiltered = data.employees;
-      });
+      },
+      (errror) => console.log('Error', errror)
+    );
   }
 
   goToMain() {
