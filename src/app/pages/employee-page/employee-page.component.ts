@@ -4,6 +4,7 @@ import { Project } from '../../models/project';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { EmployeesService } from '../../services/employees.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-employee-page',
@@ -23,19 +24,20 @@ export class EmployeePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.showSpinner = true;
-    setTimeout(() => {
-      this.getEmployeeById();
-      this.showSpinner = false;
-    }, 1000);
+    this.getEmployeeById();
   }
 
   getEmployeeById(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const id = Number(routeParams.get('id'));
-    this.employeesService.getEmployeeById(id).subscribe((data) => {
-      this.employee = data.employee;
-      this.projectsFiltered = data.projects;
-    });
+    const idFromRoute = String(routeParams.get('id'));
+    this.employeesService
+      .getEmployeeById(idFromRoute)
+      .pipe(delay(1000))
+      .subscribe((data) => {
+        this.showSpinner = false;
+        this.employee = data.employee;
+        this.projectsFiltered = data.projects;
+      });
   }
 
   goToMain(): void {

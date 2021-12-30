@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
 import { Project } from '../../models/project';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
@@ -14,15 +15,16 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.showSpinner = true;
-    setTimeout(() => {
-      this.getProjects();
-      this.showSpinner = false;
-    }, 1000);
+    this.getProjects();
   }
 
   getProjects(): void {
     this.projectsService
       .getProjects()
-      .subscribe((projects) => (this.projectsData = projects));
+      .pipe(delay(1000))
+      .subscribe((projects) => {
+        this.showSpinner = false;
+        this.projectsData = projects;
+      });
   }
 }

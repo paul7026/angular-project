@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Project } from '../models/project';
 import { PROJECTS } from '../backendData';
 import { EMPLOYEES } from '../backendData';
-import { Observable, of } from 'rxjs';
+import { delay, Observable, of } from 'rxjs';
 import { Employee } from '../models/employee';
 
 @Injectable({
@@ -15,11 +15,11 @@ export class ProjectsService {
   }
 
   getProjectByProjectId(
-    id: number
+    id: string
   ): Observable<{ project: Project; employees: Employee[] }> {
     const project = PROJECTS.find((project) => project.id === id)!;
     const employees = EMPLOYEES.filter(
-      (employee) => employee.projectId === project.id
+      (employee) => employee.projectId === +project.id
     );
     const data = { project: project, employees: employees };
     return of(data);
