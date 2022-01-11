@@ -4,7 +4,6 @@ import { Project } from '../../models/project';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { EmployeesService } from '../../services/employees.service';
-import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-employee-page',

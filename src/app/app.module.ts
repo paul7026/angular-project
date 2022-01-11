@@ -21,6 +21,11 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { ProjectsService } from './services/projects.service';
 import { EmployeesService } from './services/employees.service';
 
+import { HttpClientModule } from '@angular/common/http';
+import { APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +47,25 @@ import { EmployeesService } from './services/employees.service';
     BrowserAnimationsModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    HttpClientModule,
     AgGridModule.withComponents([]),
   ],
-  providers: [ProjectsService, EmployeesService],
+  providers: [
+    ProjectsService,
+    EmployeesService,
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) => {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://localhost:1337/graphql',
+          }),
+        };
+      },
+      deps: [HttpLink],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

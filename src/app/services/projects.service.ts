@@ -4,10 +4,22 @@ import { PROJECTS } from '../backendData';
 import { EMPLOYEES } from '../backendData';
 import { delay, Observable, of } from 'rxjs';
 import { Employee } from '../models/employee';
+import { Query, gql } from 'apollo-angular';
 
 @Injectable({
   providedIn: 'root',
 })
+export class AllPostsGQL extends Query<Response> {
+  override document = gql`
+    query ProjectList {
+      projects {
+        name
+        id
+      }
+    }
+  `;
+}
+
 export class ProjectsService {
   getProjects(): Observable<Project[]> {
     const projects = of(PROJECTS);

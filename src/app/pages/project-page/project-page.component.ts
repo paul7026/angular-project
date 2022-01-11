@@ -4,8 +4,6 @@ import { EMPLOYEES } from '../../backendData';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../services/projects.service';
-import { delay, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-project-page',
