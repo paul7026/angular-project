@@ -77,7 +77,6 @@ export const EMPLOYEES: Employee[] = [
     position: 'Front-End Developer',
     city: 'New York',
     numberOfProjects: 2,
-    projectId: 1,
   },
   {
     id: '2',
@@ -85,7 +84,6 @@ export const EMPLOYEES: Employee[] = [
     position: 'Back-End Developer',
     city: 'Washington',
     numberOfProjects: 1,
-    projectId: 1,
   },
   {
     id: '3',
@@ -93,7 +91,6 @@ export const EMPLOYEES: Employee[] = [
     position: 'QA-engineer',
     city: 'New York',
     numberOfProjects: 3,
-    projectId: 1,
   },
   {
     id: '4',
@@ -101,7 +98,6 @@ export const EMPLOYEES: Employee[] = [
     position: 'DevOps-engineer',
     city: 'Phoenix',
     numberOfProjects: 2,
-    projectId: 2,
   },
   {
     id: '5',
@@ -109,7 +105,6 @@ export const EMPLOYEES: Employee[] = [
     position: 'Front-End Developer',
     city: 'Boston',
     numberOfProjects: 3,
-    projectId: 2,
   },
   {
     id: '6',
@@ -117,6 +112,5 @@ export const EMPLOYEES: Employee[] = [
     position: 'Back-End Developer',
     city: 'Los Angeles',
     numberOfProjects: 2,
-    projectId: 2,
   },
 ];

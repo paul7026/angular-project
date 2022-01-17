@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ColDef } from 'ag-grid-community';
 import { Project } from '../../models/project';
 import { ProjectCellCustomComponent } from '../project-cell-custom/project-cell-custom.component';
@@ -8,7 +8,7 @@ import { ProjectCellCustomComponent } from '../project-cell-custom/project-cell-
   templateUrl: './projects-table.component.html',
   styleUrls: ['./projects-table.component.scss'],
 })
-export class ProjectsTableComponent {
+export class ProjectsTableComponent implements OnInit {
   @Input() projects: Project[] = [];
 
   columnDefs: ColDef[] = [
@@ -44,4 +44,6 @@ export class ProjectsTableComponent {
     resizable: true,
   };
   domLayout: string = 'autoHeight';
+
+  ngOnInit(): void {}
 }
