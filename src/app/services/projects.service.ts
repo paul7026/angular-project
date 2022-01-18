@@ -57,7 +57,6 @@ export class ProjectsService {
       })
       .valueChanges.pipe(
         map((result) => {
-          console.log(result);
           return {
             id: result.data.project.id,
             name: result.data.project.name,
